@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>ASSIST Project Admin</title>
+    <link rel="manifest" href="assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendors/simplebar/css/simplebar.css">
+
+</head>
+
+<body>
+    <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+        <div class="sidebar-brand d-none d-md-flex">
+        </div>
+        <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+
+            <li class="nav-item"><a class="nav-link active" href="index.html">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-speedometer"></use>
+                    </svg> Dashboard</a></li>
+
+            <li class="nav-item"><a class="nav-link" href="events.html">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-drop"></use>
+                    </svg> Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="users.html">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
+                    </svg>Users</a></li>
+            <li class="nav-item"><a class="nav-link" href="supervisors.html">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
+                    </svg>Supervisors</a></li>
+            <li class="nav-item"><a class="nav-link" href="organizations.html">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
+                    </svg>Organizations</a></li>
+
+
+
+    </div>
+
+
+
+    <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+        <header class="header header-sticky mb-4">
+            <div class="container-fluid">
+                <button class="header-toggler px-md-0 me-md-3" type="button"
+                    onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+                    <svg class="icon icon-lg">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
+                    </svg>
+                </button><a class="header-brand d-md-none" href="#">
+                    <svg width="118" height="46" alt="CoreUI Logo">
+                        <use xlink:href="assets/brand/coreui.svg#full"></use>
+                    </svg></a>
+                <ul class="header-nav d-none d-md-flex">
+                    <li class="nav-item"><a class="nav-link " href="#">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                </ul>
+
+            </div>
+            <div class="header-divider"></div>
+            <div class="container-fluid">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb my-0 ms-2">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">Home</a>
+                        </li>
+
+                    </ol>
+                </nav>
+            </div>
+        </header>
+        <div class="body flex-grow-1 px-3">
+            <div class="container-lg">
+                <div class="card mb-4">
+                    <div class="card-header"> Data Summary</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
+                                <div class="bg-primary theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
+                                <h6>Todo</h6>
+                                <p>
+                                    1. Import a calander
+                                    2. Import Autosearch
+
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>Event List</h2>
+
+
+
+    <script src="vendors/simplebar/js/simplebar.min.js"></script>
+
+</body>
+
+</html>
