@@ -27,7 +27,7 @@
             <li class="nav-item"><a class="nav-link" href="index.html">
                     Dashboard</a></li>
 
-            <li class="nav-item"><a class="nav-link active " href="events.html" aria-current="true">
+            <li class="nav-item"><a class="nav-link" href="events.html" aria-current="true">
                     Events</a></li>
             <li class="nav-item"><a class="nav-link" href="users.html">
                     Users</a></li>
@@ -35,7 +35,7 @@
                     Supervisors</a></li>
             <li class="nav-item"><a class="nav-link" href="organizations.html">
                     Organizations</a></li>
-            <li class="nav-item"><a class="nav-link" href="school.html">
+            <li class="nav-item"><a class="nav-link active " href="school.html">
                     Schools</a></li>
         </ul>
 
@@ -61,43 +61,39 @@
                         <li class="breadcrumb-item">
                             <!-- if breadcrumb is single--><span>Home</span>
                         </li>
-                        <li class="breadcrumb-item active"><span>Supervisors</span></li>
+                        <li class="breadcrumb-item active"><span>Schools</span></li>
                     </ol>
                 </nav>
             </div>
         </header>
         <div class="body flex-grow-1 px-3">
             <div class="container-lg">
-                <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <button class="nav-link active" id="nav-home-tab" data-coreui-toggle="tab" type="button"
-                            role="tab" aria-controls="nav-approved" onclick="switchtab('approved')"
-                            aria-selected="true">Approved
-                        </button>
-                        <button class="nav-link" id="nav-profile-tab" data-coreui-toggle="tab" type="button" role="tab"
-                            onclick="switchtab('tem')" aria-controls="nav-tem" aria-selected="false">Pending
-                        </button>
+                <div class="container-sm">
+                    <form id="addSchoolForm">
+                        <div class="mb-3">
+                            <label for="schoolName" class="form-label">Add a new School</label>
+                            <input id="schoolName" type="text" class="form-control" required>
+                            <div class="form-text">Enter a school name.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
 
-                    </div>
+                <br>
+                <div>
+                    <h2>School List</h2>
+                </div>
 
-                    <div id="supervisors-content" class="tab-content">
-                        <table id="supervisors-table">
-                            <thead>
-                                <tr>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                    </div>
-
-                </nav>
-                <div id="supervisor-details" style="display: none;">
-
+                <div id="school" class="tab-content">
+                    <table id="school-table">
+                        <thead>
+                            <tr>
+                                <th>School Name</th>
+                                <th>Points</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -105,7 +101,7 @@
 
 
     <script src="vendors/simplebar/js/simplebar.min.js"></script>
-    <script src="./js/supervisors_script.js"></script>
+    <script src="./js/schools_script.js"></script>
 </body>
 
 </html>

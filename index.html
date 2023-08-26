@@ -12,7 +12,8 @@
     <meta name="theme-color" content="#ffffff">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="vendors/simplebar/css/simplebar.css">
-
+    <!-- https://coreui.io/docs/components/buttons/ -->
+    <script src="vendors/simplebar/js/simplebar.min.js"></script>
 </head>
 
 <body>
@@ -22,27 +23,19 @@
         <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
 
             <li class="nav-item"><a class="nav-link active" href="index.html">
-                    <svg class="nav-icon">
-                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-speedometer"></use>
-                    </svg> Dashboard</a></li>
+                    Dashboard</a></li>
 
             <li class="nav-item"><a class="nav-link" href="events.html">
-                    <svg class="nav-icon">
-                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-drop"></use>
-                    </svg> Events</a></li>
+                    Events</a></li>
             <li class="nav-item"><a class="nav-link" href="users.html">
-                    <svg class="nav-icon">
-                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
-                    </svg>Users</a></li>
+                    Users</a></li>
             <li class="nav-item"><a class="nav-link" href="supervisors.html">
-                    <svg class="nav-icon">
-                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
-                    </svg>Supervisors</a></li>
+                    Supervisors</a></li>
             <li class="nav-item"><a class="nav-link" href="organizations.html">
-                    <svg class="nav-icon">
-                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
-                    </svg>Organizations</a></li>
-
+                    Organizations</a></li>
+            <li class="nav-item"><a class="nav-link" href="school.html">
+                    Schools</a></li>
+        </ul>
 
 
     </div>
@@ -54,17 +47,10 @@
             <div class="container-fluid">
                 <button class="header-toggler px-md-0 me-md-3" type="button"
                     onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
-                    <svg class="icon icon-lg">
-                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
-                    </svg>
-                </button><a class="header-brand d-md-none" href="#">
-                    <svg width="118" height="46" alt="CoreUI Logo">
-                        <use xlink:href="assets/brand/coreui.svg#full"></use>
-                    </svg></a>
+                </button><a class="header-brand d-md-none" href="#"> </a>
                 <ul class="header-nav d-none d-md-flex">
-                    <li class="nav-item"><a class="nav-link " href="#">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    <li class="nav-item"><a class="nav-link " href="index.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">My info</a></li>
                 </ul>
 
             </div>
@@ -73,9 +59,9 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb my-0 ms-2">
                         <li class="breadcrumb-item">
-                            <a href="index.html">Home</a>
+                            <span>Home</span>
                         </li>
-
+                        <li class="breadcrumb-item active"><span>Dashboard</span></li>
                     </ol>
                 </nav>
             </div>
@@ -83,32 +69,94 @@
         <div class="body flex-grow-1 px-3">
             <div class="container-lg">
                 <div class="card mb-4">
-                    <div class="card-header"> Data Summary</div>
+                    <div class="card-header"> Data Summary (Approved)</div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-                                <div class="bg-primary theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-                                <h6>Todo</h6>
-                                <p>
-                                    1. Import a calander
-                                    2. Import Autosearch
-
-                                </p>
-
+                                <h6>Current Users</h6>
+                                <h6 id="cur_user"></h6>
                             </div>
 
+                            <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
+                                <h6>Current Events</h6>
+                                <h6 id="cur_event"></h6>
+                            </div>
+
+                            <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
+                                <h6>Current Supervisors</h6>
+                                <h6 id="cur_supervisor"></h6>
+                            </div>
+                            <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
+                                <h6>Current Organizations</h6>
+                                <h6 id="cur_org"></h6>
+                            </div>
+                            <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
+                                <h6>Current Schools</h6>
+                                <h6 id="cur_school"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header"> Data Summary (Pending)</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
+                                <h6>Pending Users</h6>
+                                <h6 id="tem_user"></h6>
+                            </div>
+
+                            <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
+                                <h6>Pending Events</h6>
+                                <h6 id="tem_event"></h6>
+                            </div>
+
+                            <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
+                                <h6>Pending Supervisors</h6>
+                                <h6 id="tem_supervisor"></h6>
+                            </div>
+                            <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
+                                <h6>Pending Organizations</h6>
+                                <h6 id="tem_org"></h6>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <h2>Event List</h2>
 
 
-
-    <script src="vendors/simplebar/js/simplebar.min.js"></script>
 
 </body>
+<script>
+    const curSchoolElement = document.getElementById("cur_school");
+    const curEventElement = document.getElementById("cur_event");
+    const curUserElement = document.getElementById("cur_user");
+    const curSupervisorElement = document.getElementById("cur_supervisor");
+    const curOrgElement = document.getElementById("cur_org");
+    const temEventElement = document.getElementById("tem_event");
+    const temUserElement = document.getElementById("tem_user");
+    const temSupervisorElement = document.getElementById("tem_supervisor");
+    const temOrgElement = document.getElementById("tem_org");
+    // Fetch data from the backend
+    fetch('http://localhost:3080/summary') // Assuming you have a /summary endpoint that returns summary data
+        .then(response => response.json())
+        .then(summaryData => {
+            // Update the innerHTML of the <h6> element with the organization count
+            curSchoolElement.innerHTML = summaryData.schoolCount;
+            curEventElement.innerHTML = summaryData.eventCount;
+            curUserElement.innerHTML = summaryData.userCount;
+            curSupervisorElement.innerHTML = summaryData.supervisorCount;
+            curOrgElement.innerHTML = summaryData.organizationCount;
+            temEventElement.innerHTML = summaryData.temeventCount;
+            temUserElement.innerHTML = summaryData.temuserCount;
+            temSupervisorElement.innerHTML = summaryData.temsupervisorCount;
+            temOrgElement.innerHTML = summaryData.temorganizationCount;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
 
 </html>
